@@ -1,6 +1,7 @@
 <div class='col-lg-6'>
   <div class='well'>
 
+  <%= form_for @comic do |c|%>
   <!-- WRITE THE CORRECT FORM HEADER AND BLOCK USING ERB -->
     <% if @comic.errors.any? %>
       <div id="error_explanation">
@@ -15,19 +16,20 @@
     <% end %>
 
     <div class="form-group">
-      <!-- DISPLAY A TITLE LABEL -->
-      <!-- DISPLAY A TEXT FIELD AND ATTACH THE CLASS OF 'form-control' TO THIS FIELD -->
+      <%= c.label :title %>
+      <%= c.text_field :title, class: 'form-control'%>
     </div>
     <div class="form-group">
-      <!-- DISPLAY A DESCRIPTION LABEL -->
-      <!-- DISPLAY A TEXT FIELD AND ATTACH THE CLASS OF 'form-control' TO THIS FIELD -->
+      <%= c.label :description %>
+      <%= c.text_field :description, size:40, class: 'form-control'%>      
     </div>
     <div class="form-group">
-      <!-- DISPLAY AN IMAGE LABEL -->
-      <!-- DISPLAY A TEXT FIELD ATTACH THE CLASS OF 'form-control' TO THIS FIELD -->
+      <%= c.label :image %>
+      <%= c.text_field :image, class: 'form-control'%>   
+   
     </div>
     <div class="actions">
-      <!-- DISPLAY A SUBMIT BUTTON WITH A CLASS OF 'btn btn-primary' -->
+      <%= c.submit class: 'btn btn-primary'%>
     </div>
 
   <% end %>
